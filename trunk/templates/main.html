@@ -1,0 +1,69 @@
+{% include page.htmlhead %}
+{% include page.header %}
+
+{% if user %}
+
+	<p class="user-bar">Hi <a href="/{{user}}">{{user.nickname}}</a> | <a href="{{url}}">{{url_linktext}}</a></p>
+	<form action="" method="post" id="twig-form">
+	
+	<span id="counter"></span>
+	<h2><label for="message">What are you doing?</label> <img src="_assets/images/loading.gif" width="16" height="16" alt="" id="loader" style="display:none;" /></h2>
+	<textarea name="message" value="" id="message">{{msg}}</textarea>
+	<div id="error"{% if not error %} style="display: none"{% endif %}>Twigs should not be longer than 140 <del>meters</del> characters.</div>
+	<div id="shorturl-form" style="display: none">
+		<label for="shorturl-text">URL</label> <input type="text" id="shorturl-text" value="" />
+		<button id="shorturl-button">Shorten</button>
+		<span id="shorturl-error" style="display: none">Error!</span>
+	</div>
+	<div><input type="submit" value="Update" class="button" id="update" />
+		<a href="#" id="shorturl-link" title="Shorten URL!"><img src="_assets/images/shorturl.png" width="28" height="28" alt="#" /></a></div>
+	</form>
+	
+{% else %}
+
+	<p class="user-bar">Hi stranger | <a href="{{url}}">{{url_linktext}}</a></p>
+	<h2>What is Twig?</h2>
+	<p><strong>Twig</strong> is a <a href="http://twitter.com/">Twitter</a> clone. Almost. Currently in alpha stage. This is an experiment to try the cool <a href="http://code.google.com/appengine/">Google App Engine</a> and a little <a href="http://www.python.org/">Python</a>.</p>
+	<p>So, just play around and tell the world what you're doing now!</p>
+	
+{% endif %}
+
+<h2>Public twigs</h2>
+
+{% if twigs %}
+<ul class="twigs-list">
+{% for twig in twigs %}
+<li id="twig-{{twig.tid}}">
+<!--div class="avatar"><a href="/{{twig.who}}"><img src="{{twig.gravatar}}" width="40" height="40" alt=""></a></div-->
+<strong class="user"><a href="/{{twig.who}}">{{twig.who}}</a></strong> <span class="twig">{{twig.message|urlizetrunc:27}}</span> <a href="/{{twig.who}}/{{twig.tid}}" class="datetime" title="{{twig.when|date:"g:i a jS F Y"}}">{{twig.when|timesince}} ago</a>
+{% if user %}
+<a class="reply" href="#"><img src="/_assets/images/reply.png" width="16" height="16" alt="[reply]" title="reply to this twig" /></a>
+{% endif %}
+<div class="clear"></div>
+</li>
+{% endfor %}
+</ul>
+{% else %}
+<p>No twigs yet.</p>
+{% endif %}
+
+{{pagelinks}}
+
+<div id="info">
+<h2>Warning</h2>
+<p>This site is very alpha now due certain bugs and limitations in Google App Engine. So, certain twigs might get deleted or something. Sorry.</p>
+<h2>TODO list</h2>
+<ul>
+<li><del>Reply to twig</del></li>
+<li>Follow twigs</li>
+<li><del>Pagination</del></li>
+<li>Delete twig</li>
+<li><del>Linkification and URL shortening</del></li>
+<li><del>Time since eg. 5 minutes ago</del></li>
+<li>Favourite twig</li>
+<li>Search</li>
+</ul>
+<p><a href="mailto:cheeaun+twig@gmail.com">Help needed</a> and <a href="http://twitter.com/cheeaun">ideas welcomed</a>. Thanks for reading this.</p>
+</div>
+
+{% include page.footer %}

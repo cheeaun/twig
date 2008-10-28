@@ -1,0 +1,49 @@
+{% include page.htmlhead %}
+{% include page.header %}
+
+{% if user %}
+
+	<p class="user-bar">Hi <a href="/{{user}}">{{user.nickname}}</a> | <a href="/">Home</a> | <a href="{{url}}">{{url_linktext}}</a></p>
+	
+{% else %}
+
+	<p class="user-bar">Hi stranger | <a href="/">Home</a> | <a href="{{url}}">{{url_linktext}}</a></p>
+	
+{% endif %}
+
+{% if owner %}
+<h2>Your twigs</h2>
+{% else %}
+<h2>{{title}}</h2>
+{% endif %}
+
+{% if twigs %}
+<ul class="twigs-list">
+{% for twig in twigs %}
+<li id="twig-{{twig.tid}}">
+<!--div class="avatar"><a href="/{{twig.who}}"><img src="{{twig.gravatar}}" width="40" height="40" alt=""></a></div-->
+<strong class="user"><a href="/{{twig.who}}">{{twig.who}}</a></strong> <span class="twig">{{twig.message|urlizetrunc:27}}</span> <a href="/{{twig.who}}/{{twig.tid}}" class="datetime" title="{{twig.when|date:"g:i a jS F Y"}}">{{twig.when|timesince}} ago</a>
+<div class="clear"></div>
+</li>
+{% endfor %}
+</ul>
+{% else %}
+<p>No twigs yet.</p>
+{% endif %}
+
+{% if atwigs %}
+<h3>@twigs</h3>
+
+<ul class="twigs-list">
+{% for twig in atwigs %}
+<li id="twig-{{twig.tid}}">
+<!--div class="avatar"><a href="/{{twig.who}}"><img src="{{twig.gravatar}}" width="40" height="40" alt=""></a></div-->
+<strong class="user"><a href="/{{twig.who}}">{{twig.who}}</a></strong> <span class="twig">{{twig.message|urlizetrunc:27}}</span> <a href="/{{twig.who}}/{{twig.tid}}" class="datetime" title="{{twig.when|date:"g:i a jS F Y"}}">{{twig.when|timesince}} ago</a>
+<div class="clear"></div>
+</li>
+{% endfor %}
+</ul>
+{% endif %}
+
+
+{% include page.footer %}
