@@ -1,0 +1,15 @@
+application: twig
+version: 1
+api_version: 1
+runtime: python
+
+handlers:
+- url: /_assets
+  static_dir: _assets
+
+- url: /favicon.ico
+  static_files: _assets/images/favicon.ico
+  upload: _assets/images/favicon.ico
+
+- url: /.*
+  script: main.py

@@ -1,0 +1,12 @@
+{% include page.htmlhead %}
+
+<body id="status-page">
+{% for twig in twigs %}
+<div class="status-box" id="twig={{twig.tid}}">
+<!--div class="avatar"><a href="/{{twig.who}}"><img src="{{twig.gravatar}}" width="40" height="40" alt=""></a></div-->
+<strong class="user"><a href="/{{twig.who}}">{{twig.who}}</a></strong> <span class="twig">{{twig.message|urlizetrunc:30}}</span> <a href="/{{twig.who}}/{{twig.tid}}" class="datetime" title="{{twig.when|date:"g:i a jS F Y"}}">{{twig.when|timesince}} ago</a>
+<div class="clear"></div>
+</div>
+{% endfor %}
+</body>
+</html>

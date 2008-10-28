@@ -1,0 +1,255 @@
+body{
+	text-align: center;
+	margin: 0;
+	padding: 0;
+	color: #fff;
+	background-color: #474A4B;
+}
+
+*{
+	font-family: "MyRiad Pro", MyRiad, Helvetica, Arial, sans-serif;
+}
+
+a{
+	color: #A9B0B2;
+	background-color: transparent;
+}
+
+a:hover{
+	color: #fff;
+	background-color: transparent;
+}
+
+img, a img{
+	border: 0;
+}
+
+#container{
+	text-align: left;
+	width: 30em;
+	margin: auto;
+}
+
+#header{
+	text-align: center;
+	padding: 160px 10px 10px;
+	background: #fff url(../images/twig-bg.png) center 10px repeat-x;
+}
+
+h1{
+	font-size: 8em;
+	margin: 0;
+	padding: 0;
+	letter-spacing: -.05em;
+}
+
+h1 a,
+h1 a:hover{
+	color: #37393A;
+	background-color: transparent;
+	text-decoration: none;
+}
+
+p#desc{
+	font-weight: bold;
+	font-size: .8em;
+	color: #fff;
+	background: transparent url(../images/desc-bg.png) center no-repeat;
+	padding: 1em;
+	margin: 0;
+}
+
+h2{
+	margin: 0;
+	padding: 0;
+}
+
+.user-bar{
+	margin: 0;
+	padding: .5em;
+	font-size: .8em;
+	text-align: right;
+}
+
+.user-bar a{
+	text-decoration: none;
+}
+
+#error{
+	padding: .5em;
+	color: inherit;
+	background-color: #4B2424;
+	font-size: .9em;
+	text-align: center;
+}
+
+#shorturl-link img{
+	border: 0;
+	float: right;
+	width: auto;
+	position: relative;
+	margin-top: -38px;
+}
+
+#shorturl-form{
+	padding: .5em;
+	color: inherit;
+	background-color: #666B6C;
+	text-align: center;
+	vertical-align: middle;
+}
+
+#shorturl-text,
+#shorturl-button{
+	vertical-align: middle;
+}
+#shorturl-text{
+	width: 18em;
+	padding: 2px;
+	font-size: 1em;
+}
+#shorturl-button{
+	width: auto;
+	overflow: visible;
+	padding: 1px 5px;
+	font-size: .9em;
+}
+
+#counter{
+	float: right;
+	width: auto;
+	font-size: 1.5em;
+	color: #666B6C;
+	background-color: transparent;
+	font-weight: bold;
+}
+
+#counter.error{
+	color: red;
+	background-color:transparent;
+}
+
+textarea{
+	width: 23.5em;
+	height: 4em;
+	border: .25em solid #666B6C;
+	font-size: 1.2em;
+	font-weight: bold;
+	padding: .5em;
+	color: #000;
+	background: #fff url(../images/textarea-bg.png) top repeat-x;
+	overflow: auto;
+}
+
+.button{
+	width: 100%;
+	height: 28px;
+	line-height: 20px;
+	border: 0;
+	font-weight: bold;
+	font-size: .8em;
+	color: #fff;
+	background: transparent url(../images/button-bg.png) center no-repeat;
+	margin: 10px 0;
+}
+
+.twigs-list{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.twigs-list li{
+	margin: 1em 0 0;
+	padding: 10px;
+	list-style: none;
+	color: #fff;
+	background-color: #666B6C;
+	clear: left;
+}
+
+.twigs-list li img{
+	vertical-align: middle;
+	margin: 0 2px;
+}
+
+.avatar{
+	float: left;
+	width: auto;
+	margin: 0 10px 0 0;
+}
+
+.twig a{
+	color: #fff;
+	background-color: transparent;
+}
+.twig a:hover{
+	color: #DBE6E8;
+	background-color: transparent;
+}
+
+.user a,.datetime,.reply{
+	text-decoration: none;
+}
+
+.datetime,.reply{
+	font-size: .8em;
+	white-space: nowrap;
+}
+
+.clear{
+	clear: both;
+}
+
+.pagenums{
+	text-align: right;
+	word-spacing: .5em;
+}
+
+.pagenums a{
+	color: #A9B0B2;
+	background-color: #666B6C;
+	padding: .3em .6em;
+	text-decoration: none;
+	word-spacing: 0;
+}
+.pagenums a:hover{
+	color: #fff;
+	background-color: #666B6C;
+}
+.pagenums a.selected{
+	color: #fff;
+	background-color: #3B3D3E;
+}
+
+#status-page{
+	background: #474A4B url(../images/big-bird-on-twig.png) center 30px no-repeat;
+	padding: 0;
+	margin: 0;
+}
+
+.status-box{
+	padding: 1em;
+	color: #fff;
+	background-color: #666B6C;
+	width: 30em;
+	margin: 330px auto 0;
+	text-align: left;
+}
+
+#info{
+	margin: 1em 0 0;
+	padding: 1em;
+	color: #fff;
+	background-color: #3B3D3E;
+	font-size: .8em;
+}
+
+#footer{
+	margin-top: 3em;
+	text-align: right;
+	font-size: .8em;
+	color: #ccc;
+	background: transparent url(../images/bird-on-twig.png) 95% bottom no-repeat;
+	padding: 20px 80px 5px 0;
+}
